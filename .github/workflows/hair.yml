@@ -22,6 +22,16 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           
+      - name: Gradle Caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+          
       - name: make application.yml
         run: |
           cd ./src/main/resources 
