@@ -22,6 +22,15 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           
+      - name: make application.yml
+        run: |
+          cd ./src/main/resources 
+    
+          touch ./application.yml
+        
+          echo "${{ secrets.PROPERTIES }}" > ./application.yml
+        shell: bash
+          
       - name: Grant execute permisson for gradlew
         run: chmod +x gradlew
         shell: bash
