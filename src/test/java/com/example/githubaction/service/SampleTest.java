@@ -15,7 +15,6 @@ public class SampleTest {
     public void test() {
 
         Assertions.assertThat(name).isEqualTo("NaDongMin");
-//        Assertions.assertThat(name).isEqualTo("HongGilDong");
 
     }
 }
